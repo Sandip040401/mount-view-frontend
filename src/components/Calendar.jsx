@@ -75,13 +75,6 @@ const Calendar = () => {
     }
   }, [month, year]);
 
-  // Effect to fetch data periodically
-  useEffect(() => {
-    if (month && year) {
-      const intervalId = setInterval(handleFetchData, 10000); // Fetch data every 10 seconds
-      return () => clearInterval(intervalId); // Clear interval on component unmount
-    }
-  }, [month, year]);
 
   // Generate options for months (January to December)
   const monthOptions = Array.from({ length: 12 }, (_, index) => {
